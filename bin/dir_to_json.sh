@@ -13,7 +13,7 @@ VERBOSE=0
 
 if [ "$1" == "clean" ]; then
 	exit 1
-elif [ "$1" == "verbose"] || [ "$1" == "-v" ]; then
+elif [ "$1" == "verbose" ] || [ "$1" == "-v" ] ; then
 	VERBOSE=1
 fi
 
