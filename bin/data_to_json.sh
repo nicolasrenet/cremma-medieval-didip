@@ -24,7 +24,7 @@ for d in * ; do
 	# Alto → Page
 	echo "Alto → Page..."
 	for alto in $(ls *.xml|grep -v chocomufin) ; do 
-		mv $alto ${alto%.xml}.alto.xml ; 
+		cp -a $alto ${alto%.xml}.alto.xml ; 
 		$PYTHONPATH/bin/alto_to_page.py ${alto%.xml}.chocomufin.xml > ${alto%.xml}.page.xml ; 
 	done;
 	# Page → JSON
