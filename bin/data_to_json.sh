@@ -8,6 +8,13 @@
 USAGE="${0} [clean | verbose]"
 export PYTHONPATH=~/graz/htr/vre/ddpa_htr
 SCHEMA_PATH=~/graz/htr/vre/ddpa_lines_ng/dataset/lines_schema.json
+
+
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+	echo "${USAGE}"
+	exit 0	
+fi
+
 find . -name "*.alto.xml" | xargs rm -f;
 find . -name "*.page.xml" | xargs rm -f ;
 find . -name "*.json" | xargs rm -f ;
@@ -16,10 +23,7 @@ git checkout -- .
 
 VERBOSE=0
 
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-
-	exit 0	
-elif [ "$1" == "clean" ]; then
+if [ "$1" == "clean" ]; then
 	exit 0
 elif [ "$1" == "verbose" ] || [ "$1" == "-v" ] ; then
 	VERBOSE=1
