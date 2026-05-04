@@ -1,6 +1,11 @@
 #!/bin/bash
 #
+# Convert segmentation meta-data:
+#  ALTO → Page → [DiDip-]JSON
+#
+# USAGE: ./data_to_json.sh [clean | verbose]
 
+USAGE="${0} [clean | verbose]"
 export PYTHONPATH=~/graz/htr/vre/ddpa_htr
 SCHEMA_PATH=~/graz/htr/vre/ddpa_lines_ng/dataset/lines_schema.json
 find . -name "*.alto.xml" | xargs rm -f;
@@ -11,8 +16,11 @@ git checkout -- .
 
 VERBOSE=0
 
-if [ "$1" == "clean" ]; then
-	exit 1
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+
+	exit 0	
+elif [ "$1" == "clean" ]; then
+	exit 0
 elif [ "$1" == "verbose" ] || [ "$1" == "-v" ] ; then
 	VERBOSE=1
 fi
