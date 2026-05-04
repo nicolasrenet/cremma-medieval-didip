@@ -17,7 +17,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 	
 	  clean: exit immediately after restoring the original [Alto] XML files from repo.
 	
-	  verbose: debugging output?
+	  verbose: debugging output.
 	EOF
 	exit 0	
 fi
