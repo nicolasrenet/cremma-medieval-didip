@@ -15,7 +15,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
 	cat<<-EOF
 	${0} [ clean | verbose ]
 	
-          clean: exit immediately after restoring the original [Alto] XML files from repo.
+	  clean: exit immediately after restoring the original [Alto] XML files from repo.
 	
 	  verbose: debugging output?
 	EOF
