@@ -4,14 +4,21 @@
 #  ALTO → Page → [DiDip-]JSON
 #
 # USAGE: ./data_to_json.sh [clean | verbose]
+#
+#
 
-USAGE="${0} [clean | verbose]"
 export PYTHONPATH=~/graz/htr/vre/ddpa_htr
 SCHEMA_PATH=~/graz/htr/vre/ddpa_lines_ng/dataset/lines_schema.json
 
 
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-	echo "${USAGE}"
+	cat<<-EOF
+	${0} [ clean | verbose ]
+	
+          clean: exit immediately after restoring the original [Alto] XML files from repo.
+	
+	  verbose: debugging output?
+	EOF
 	exit 0	
 fi
 
